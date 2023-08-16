@@ -283,6 +283,7 @@ nav li .fillter-links {
     border-radius: 4px;
     background: var(--brand-color);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
 }
 
 .fillter-service-btn:hover {
@@ -820,4 +821,26 @@ li {
     
 }
 
+.modal {
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 300px;
+    background-color: var(--background-main-color);
+    position: fixed;
+    z-index: 1;
+    transition-property: visibility, opacity, transform;
+    transition-duration: 2s;
+    transform: translateX(-25%) translateY(-25%) scale(1) rotate(360deg) skew(0deg 0deg);
+    opacity: 1;
+    visibility: visible;
+    display: block;
+}
+
+.is-hidden {
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(-25%) translateY(-25%) scale(0) rotate(5deg) skew(20deg 20deg);
+}
 

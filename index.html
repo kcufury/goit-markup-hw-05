@@ -61,10 +61,10 @@
           </h1>
           <ul class="fillter-order-service">
             <li>
-              <button type="button"></button>
-              <a href="./portfolio.html" class="fillter-service-btn"
-                >Order Service</a
-              >
+              <button class="fillter-service-btn" data-modal-open type="button">Order Service</button>
+              <div class="modal is-hidden" data-modal>
+                <button data-modal-close>X</button>
+              </div>
             </li>
           </ul>
         </article>
@@ -509,5 +509,6 @@
       </div>
       </div>
     </footer>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
