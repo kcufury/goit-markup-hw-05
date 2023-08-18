@@ -13,6 +13,7 @@
     --brand-color: #4D5AE5;
     --border-secondary-color: #8E8F99;
     --border-main-color: #E7E9FC;
+    --dairy: #FCFCFC;
 }
 
 .fillter-contact-1 a:hover,
@@ -29,7 +30,11 @@
 .fillter-web-links a:hover,
 .fillter-web-links a:focus {
     color: var(--brand-color);
-    
+}
+
+.fillter-links::after {
+    border-radius: 2px;
+    background: var(--background-fourth-color);
 }
 
 .social-links button:focus,
@@ -273,7 +278,6 @@ nav li .fillter-links {
     /* Button Text */
     font-size: 16px;
     font-weight: 500;
-    font-style: Roboto;
     line-height: 1.5;
     /* 150% */
     letter-spacing: 0.64px;
@@ -634,6 +638,7 @@ li {
 
 .portfolio-list-hover {
     cursor: pointer;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-list img,
@@ -823,36 +828,34 @@ li {
     
 }
 
-.background-popups {
-    position: relative;
-    margin: auto;
-    max-width: 408px;
-    max-height: 584px;
-    background-color: #fff;
-    transition: scale 250ms;
-
-}
-
-.is-hidden .background-popups {
-    scale: 0;
-}
-
-.modal:not(.is-hidden) .background-popups {
-    scale: 1;
+.backdrop {
+    position: fixed;
+    width: 408px;
+    height: 584px;
+    background: var(--dairy);
+    transition: opacity 500ms;
 }
 
 .close-btn {
     position: absolute;
     inset: 1em 1em auto auto;
+        left: 368px;
+            bottom: 0px;
+            cursor: pointer;
+            margin: 8px 8px;
 }
 .modal {
-    position: fixed;
-    inset: 0;
-        background-color: rgb(0 0 0 / 0.5);
-    opacity: 1;
-    pointer-events: all;
-    visibility: visible;
-    transition: opacity 250ms;
+    max-width: 408px;
+        max-height: 584px;
+        position: absolute;
+        botton: 100px;
+        left: 0;
+        border-radius: 4px;
+        background-color: var(--background-main-color);
+        transform: translate(-50%, -50%);
+        box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20),
+            0px 1px 3px 0px rgba(0, 0, 0, 0.12),
+            0px 1px 1px 0px rgba(0, 0, 0, 0.14);
 }
 
 .is-hidden {
