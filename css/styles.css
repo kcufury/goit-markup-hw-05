@@ -14,6 +14,7 @@
     --border-secondary-color: #8E8F99;
     --border-main-color: #E7E9FC;
     --dairy: #FCFCFC;
+    --modal: rgba(46, 47, 66, 0.40);
 }
 
 .fillter-contact-1 a:hover,
@@ -105,6 +106,7 @@ header {
 }
 
 body {
+    font-weight: 400;
     font-family: "Roboto", sans-serif;
     background: var(--background-main-color);
 
@@ -141,9 +143,9 @@ button {
     content: "";
     background-color: var(--background-fourth-color);
     height: 4px;
-    width: 66px;
-    bottom: 466px;
-    left: 542px;
+    width: 100%;
+        bottom: 0;
+        left: 0;
     border-radius: 2px;
     position: absolute;
 }
@@ -190,7 +192,7 @@ button {
     line-height: 1.5;
     /* 150% */
     letter-spacing: 0.23px;
-    padding-left: auto;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -230,12 +232,9 @@ button {
 }
 
 .fillter-links {
-    display: flex;
     color: var(--font-main-color);
     /* Body Medium */
-    width: fit-content;
     font-family: var(--font-text);
-    height: 24px;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.5;
@@ -243,6 +242,8 @@ button {
     align-items: flex-start;
     /* 150% */
     letter-spacing: 0.02em;
+    position: relative;
+        padding: 30px 0;
 }
 
 
@@ -634,17 +635,15 @@ li {
 
 .border-box {
     border: 1px solid var(--cornflower, #E7E9FC);
-    padding: 0;
+    padding: 32px 16px;
     margin: 0;
     border-top: none;
 }
 
 .portfolio-list-hover {
     cursor: pointer;
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.portfolio-list img,
 .portfolio-list li {
     border-radius: 0px 0px 4px 4px;
     border: none
@@ -658,8 +657,6 @@ li {
     display: flex;
     flex-direction: row;
     color: var(--font-main-color);
-    padding-left: 16px;
-    padding-top: 32px;
     margin: 0;
     /* Header 3 */
     font-family: var(--font-text);
@@ -678,17 +675,13 @@ li {
     flex-direction: row;
     width: fit-content;
     color: var(--font-secondary-color);
-    padding-left: 16px;
-    padding-top: 8px;
-    padding-bottom: 25px;
-    margin: 0;
+    margin-top: 8px;
     /* Body */
     font-family: var(--font-text);
     font-size: 16px;
     line-height: 1.5;
     /* 150% */
     letter-spacing: 0.32px;
-    margin: 0;
 }
 
 .fillter-bottom-section {
@@ -833,28 +826,38 @@ li {
 
 .backdrop {
     position: fixed;
-    width: 408px;
-    height: 584px;
-    background: var(--dairy);
-    transition: opacity 500ms;
+    width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: 1;
+        background-color: rgba(46, 47, 66, 0.4);
 }
 
 .close-btn {
     position: absolute;
-    inset: 1em 1em auto auto;
-        left: 368px;
-            bottom: 0px;
-            cursor: pointer;
-            margin: 8px 8px;
+    top: 24px;
+        right: 24px;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        background-color: var(--border-main-color);
+            border-radius: 50%;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            fill: var(--background-third-color);
+        }
+        
+        .close-btn-svg {
+    margin: 8px 8px;
 }
 .modal {
-    max-width: 408px;
-        max-height: 584px;
         position: absolute;
-        bottom: 100px;
-        left: 0;
+        top: 50%;
+            left: 50%;
+            width: 408px;
+            height: 584px;
         border-radius: 4px;
-        background-color: var(--background-main-color);
+        background: var(--dairy);
         transform: translate(-50%, -50%);
         box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20),
             0px 1px 3px 0px rgba(0, 0, 0, 0.12),
@@ -872,36 +875,24 @@ li {
     overflow: hidden;
 }
 
-.trn-hover>img {
-    display: block;
-    width: 100%;
-    height: 100;
-    object-fit: cover;
-}
-
 .trn-description {
     position: absolute;
     inset: 0;
+    width: 100%;
+        height: 100%;
     background-color: var(--brand-color);
-    color: #fff;
-    translate: 0 100% 0;
-    transition: translate 250ms;
-}
-
-.trn-slider {
     color: var(--background-secondary-color);
-    /* Body */
-    font-family: Roboto;
     font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
     line-height: 1.5;
     /* 150% */
     letter-spacing: 0.32px;
+    translate: 0 100% 0;
+        transform: translateY(110%);
+        transition: transform var(--transition);
+        padding-inline: 32px;
+        padding-top: 40px;
 }
 
-.portfolio-shw {
-    transition-property: box-shadow;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+.trn-description:hover {
 }
+
