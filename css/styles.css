@@ -15,6 +15,9 @@
     --border-main-color: #E7E9FC;
     --dairy: #FCFCFC;
     --modal: rgba(46, 47, 66, 0.40);
+    --tr-function: cubic-bezier(0.4, 0, 0.2, 1);
+        --tr-duration: 250ms;
+        --transition: var(--tr-function) var(--tr-duration);
 }
 
 .fillter-contact-1 a:hover,
@@ -43,8 +46,8 @@
 
 .portfolio-list-hover:hover,
 .portfolio-list-hover:focus {
-    border: none;
-    background: var(--background-main-color);
+    transition: color var(--transition), background-color var(--transition),
+            box-shadow var(--transition);
     box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 
@@ -871,28 +874,34 @@ li {
 }
 
 .trn-hover {
+    display: block;
     position: relative;
     overflow: hidden;
 }
 
 .trn-description {
     position: absolute;
-    inset: 0;
+    top: 0;
+        left: 0;
     width: 100%;
-        height: 100%;
-    background-color: var(--brand-color);
-    color: var(--background-secondary-color);
-    font-size: 16px;
-    line-height: 1.5;
-    /* 150% */
-    letter-spacing: 0.32px;
+    height: 100%;
     translate: 0 100% 0;
-        transform: translateY(110%);
+        background: var(--brand-color);
         transition: transform var(--transition);
-        padding-inline: 32px;
-        padding-top: 40px;
+    }
+    
+    .trn-slider {
+    color: var(--background-secondary-color);
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+        font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.32px;
+    padding: 40px 32px 164px;
 }
 
-.trn-description:hover {
+.trn-hover:hover .trn-description {
+    transform: translateY(0);
 }
 
