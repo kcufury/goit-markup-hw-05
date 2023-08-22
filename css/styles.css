@@ -32,7 +32,8 @@
 
 
 .fillter-links:hover,
-.fillter-links:focus {
+.fillter-links:focus,
+.fillter-links:active {
     color: var(--brand-color);
 }
 
