@@ -851,7 +851,8 @@ li {
         }
         
 .close-btn-svg {
-    margin: 8px 8px;
+    max-width: 24px;
+        max-height: 24px;
 }
 .modal {
         position: absolute;
