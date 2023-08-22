@@ -875,6 +875,9 @@ li {
     opacity: 0;
 }
 
+.is-hidden .modal {
+    scale: 0;
+}
 .trn-hover {
     display: block;
     position: relative;
