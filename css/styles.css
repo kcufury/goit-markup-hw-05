@@ -254,8 +254,13 @@ button {
         padding: 30px 0;
 }
 
+.fillter-links::before {
+    position: absolute;
+    fill: var(--font-main-color);
+}
 .fillter-links::after {
-    background-color: var(--brand-color);
+    position: absolute;
+        fill: var(--brand-color);
 }
 
 .crnt {
