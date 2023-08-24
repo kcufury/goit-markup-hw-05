@@ -142,21 +142,7 @@ button {
     flex-shrink: 0;
 }
 
-.slt-line::after {
-    content: "";
-    background-color: var(--background-fourth-color);
-    height: 4px;
-    width: 100%;
-        bottom: 0;
-        left: 0;
-    border-radius: 2px;
-    position: absolute;
-}
-.fillter-link::after {
-    position: absolute;
-    content: "";
-    background: var(--brand-color);
-}
+
 .head-links {
     display: flex;
     align-items: center;
@@ -239,6 +225,7 @@ button {
     margin: 0;
 }
 
+
 .fillter-links {
     color: var(--font-main-color);
     /* Body Medium */
@@ -254,15 +241,20 @@ button {
         padding: 30px 0;
 }
 
-.fillter-links::before {
-    position: absolute;
-    fill: var(--font-main-color);
+.slt-line {
+    color: var(--brand-color);
+    position: relative;
 }
-.fillter-links::after {
+.slt-line::after {
+    content: "";
+    background-color: var(--background-fourth-color);
+    height: 4px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    border-radius: 2px;
     position: absolute;
-        fill: var(--brand-color);
 }
-
 .crnt {
     position: relative;
 }
